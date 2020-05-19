@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+   <style>
+    body{
+    background-image: url('https://cdn.pixabay.com/photo/2014/09/27/17/35/dandelion-463928_960_720.jpg');
+        /* Full height */
+        height: 100%; 
+        background-repeat: no-repeat;
+        #background-attachment: fixed;
+        #background-position: center;
+        background-size: cover;
+    }
+    
+    </style>
+	<header>
+		<div class="container">
+		<div id="brandname">
+			<h2>Air Quality Index Prediction</h2>
+		</div>
+		
+		
+	</div>
+	</header>
+	<p style="color:white;font-size:20;text-align: center;"><b>Result</b></p>
+	<div class="results">
+
+	<h2 style="color:white;">Air Quality Index Output</h2>
+	 <table>
+         <tbody>
+         <th>PM2.5</th>
+         {# here we iterate over every item in our list#}
+         {% for item in prediction %}
+             <tr><td>{{ item }}</td></tr>
+         {% endfor %}
+         </tbody>
+     </table>
+      <h2 style="color:white;">Refer the Below Table for Air Quality for the Resulted PM2.5 Value</h2>
+	<img src="https://www.airveda.com/resources/images/pm_levels.png" alt="PM" style="width:800px;height:250px;">
+	</div>
+
+</body>
+</html>

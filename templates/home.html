@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+	<!-- <link rel="stylesheet" type="text/css" href="../static/css/styles.css"> -->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+      <style>
+    body{
+    background-image: url('https://cdn.pixabay.com/photo/2014/09/27/17/35/dandelion-463928_960_720.jpg');
+        /* Full height */
+        height: 100%; 
+        background-repeat: no-repeat;
+        #background-attachment: fixed;
+        #background-position: center;
+        background-size: cover;
+    }
+    
+    </style>
+	<header>
+		<div class="container">
+		<div id="brandname">
+			<h2>Machine Learning App with Flask</h2>
+		</div>
+		<h2 style="color:white;">Air Quality Index Prediction</h2>
+		
+	</div>
+	</header>
+
+	<div class="ml-container">
+
+		<form action="/predict" method="POST">
+		
+		<!-- <input type="text" name="comment"/> -->
+		  
+ <fieldset>
+  <legend><h4 style="color:white;">Climatic Attributes</h4></legend>
+  <label for="T">Average Temperature (°C) :</label>
+  <input name="T" type="number" step="0.01" min="0"><br><br>
+  <label for="TM">Maximum temperature (°C) :</label>
+  <input name="TM" type="number" step="0.01" min="0"><br><br>
+  <label for="Tm">Minimum temperature (°C) :</label>
+  <input name="Tm" type="number" step="0.01" min="0"><br><br>
+  <label for="H">Average relative humidity (%) :  </label>
+  <input name="H" type="number" step="0.01" min="0"><br><br>
+  <label for="VV">Average visibility (Km) :</label>
+  <input name="VV" type="number" step="0.01" min="0"><br><br>
+  <label for="v">Average wind speed (Km/h) :</label>
+  <input name="v" type="number" step="0.01" min="0"><br><br>
+  <label for="vm">Maximum sustained wind speed (Km/h) :</label>
+  <input name="vm" type="number" step="0.01" min="0"><br><br>
+ </fieldset>
+
+<br>
+
+<p style="color:white;">Click the submit Button to Get Prediction</p>
+<input type="submit" class="btn-info" value="predict">		
+	</form>
+	<h3>About this Project</h3>
+    <p style="color:white;">The above Fields are required for the prediction of  PM2.5</p> 
+    <p style="color:white;">Particle pollution, also called particulate matter or PM, consists of solid and liquid particles made up of ash, metals, soot, diesel exhaust, and chemicals.</p>
+    <p style="color:white;">PM2.5. The small particles are smaller than 2.5 micrometers (more than 100 times thinner than a human hair). These particles are called PM2.5 (we say "P M two point five", as in Particulate Matter up to 2.5 micrometers in size). These consist of toxic organic compounds and heavy metals. They are made from automobile exhaust, burning garbage and landfill, smelting and processing of metals.</p>	
+	<i style="font-size:24px" class="fa">&#xf08c;</i>
+	<a href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile">My Linkedin Profile</a>
+	</div>
+
+</body>
+</html>
